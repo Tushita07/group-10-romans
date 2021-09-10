@@ -28,40 +28,38 @@ def RomanToDecimal(input_roman = str):
 def ToRoman(input_decimal = int):
     next_decimal = input_decimal
     Count_M = int(next_decimal/1000)
-    Print(Count_M)
+    print(Count_M)
     # if Count_M >= 1
     next_decimal = next_decimal%1000
     Count_D = int(next_decimal/500)
-    Print(Count_D)
+    print(Count_D)
     # if Count_D >= 1:
     next_decimal = next_decimal%500
     Count_C = int(next_decimal/100)
-    Print(Count_C)
+    print(Count_C)
     # if Count_C >= 1:
     next_decimal = next_decimal % 100
     Count_L = int(next_decimal / 50)
-    Print(Count_L)
+    print(Count_L)
     # if Count_L >= 1:
     next_decimal = next_decimal % 50
     Count_X = int(next_decimal / 10)
-    Print(Count_X)
+    print(Count_X)
     # if Count_X >= 1:
     next_decimal = next_decimal % 10
     Count_V = int(next_decimal / 5)
-    Print(Count_V)
+    print(Count_V)
     # if Count_V >= 1:
     next_decimal = next_decimal % 5
     Count_I = int(next_decimal / 1)
-    Print(Count_I)
+    print(Count_I)
     # if Count_I >= 1:
-    next_decimal = input_decimal % 1000
+    next_decimal = next_decimal % 1000
     Min_String_normal = 'M'*Count_M + 'D'*Count_D + 'C'*Count_C+ 'L'*Count_L + 'X'*Count_X + 'V'*Count_V + 'I'*Count_I
-
-    print('M'*Count_M + 'D'*Count_D + 'C'*Count_C+ 'L'*Count_L + 'X'*Count_X + 'V'*Count_V + 'I'*Count_I)
-
-
-
-
+    Min_String_length = len(Min_String_normal)
+    print(Min_String_normal)
+    print(Min_String_length)
+    return [Min_String_length, Min_String_normal]
 
 
 
@@ -75,12 +73,22 @@ def ToRoman(input_decimal = int):
 
 
 
-import os
 
-path = f'code{os.sep}files{os.sep}text{os.sep}'
+
+
+
+
+
+
+
+#path = f'code{os.sep}files{os.sep}text{os.sep}'
 filename = 'roman_number.txt'
-input_file = open(path + filename, 'r')
+input_file = open(filename, 'r')
 print(input_file)
-print(input_file.read())
+#print(input_file.read())
+lines = input_file.readlines()
+for line in lines:
+    input_roman = line.strip()
+    
 input_file.close()
 
